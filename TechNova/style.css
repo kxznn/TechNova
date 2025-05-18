@@ -1,0 +1,344 @@
+/* RESET GERAL PARA REMOVER PADRÕES DOS NAVEGADORES */
+* {
+  margin: 0;
+  /* Remove as margens externas padrão */
+  padding: 0;
+  /* Remove os espaçamentos internos padrão */
+  box-sizing: border-box;
+  /* Inclui borda e padding no cálculo do tamanho dos elementos */
+}
+
+body {
+  background-color: #000000;
+  /* Define a cor de fundo do corpo da página como preto */
+  font-family: 'Roboto Condensed', sans-serif;
+  /* Define a fonte usada no corpo do site */
+}
+
+/* SEÇÃO COM IMAGEM DE FUNDO NO TOPO DA PÁGINA */
+.top-pg {
+  background-image: url('https://wallpapers.com/images/hd/4k-tech-8ud1fgpt22qs67c7.jpg');
+  /* Define a imagem de fundo */
+  background-size: cover;
+  /* Faz com que a imagem cubra toda a área */
+  background-position: center;
+  /* Centraliza a imagem */
+  min-height: 100vh;
+  /* Define altura mínima igual à altura total da tela */
+  position: relative;
+  /* Cria um contexto para posicionamento absoluto */
+  color: white;
+  /* Define a cor do texto como branco */
+}
+
+/* SOBREPOSIÇÃO ESCURA SOBRE A IMAGEM DE FUNDO */
+.top-pg::before {
+  content: '';
+  /* Cria um pseudo-elemento vazio */
+  position: absolute;
+  /* Posiciona de forma absoluta sobre a seção */
+  inset: 0;
+  /* Ocupa toda a área do elemento pai */
+  background: rgba(0, 0, 0, 0.6);
+  /* Fundo preto com 60% de opacidade */
+  z-index: 0;
+  /* Fica abaixo do conteúdo principal */
+}
+
+/* MENU DE NAVEGAÇÃO */
+.navbar {
+  display: flex;
+  /* Alinha os itens horizontalmente */
+  justify-content: space-between;
+  /* Espaça o logo dos links */
+  align-items: center;
+  /* Alinha verticalmente */
+  padding: 20px 50px;
+  /* Espaço interno nas laterais e topo/baixo */
+  position: relative;
+  /* Para sobrepor corretamente o ::before */
+  z-index: 2;
+  /* Fica acima da camada escura */
+}
+
+.navbar h1 {
+  color: white;
+  /* Cor do título/logo */
+  font-size: 1.5rem;
+  /* Tamanho do texto */
+}
+
+.navbar ul {
+  display: flex;
+  /* Exibe os itens em linha */
+  list-style: none;
+  /* Remove marcadores da lista */
+  gap: 30px;
+  /* Espaçamento entre os itens */
+}
+
+.navbar ul li a {
+  color: white;
+  /* Cor dos links */
+  text-decoration: none;
+  /* Remove sublinhado */
+  font-weight: 550;
+  /* Negrito moderado */
+}
+
+/* BOTÃO PADRÃO */
+.btn {
+  background-color: green;
+  /* Fundo verde */
+  color: white;
+  /* Texto branco */
+  padding: 10px 15px;
+  /* Espaço interno do botão */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  border: none;
+  /* Sem borda */
+  cursor: pointer;
+  /* Cursor de mãozinha ao passar o mouse */
+  transition: all 0.3s ease;
+  /* Transição suave em 0.3s */
+  text-decoration: none;
+  /* Remove sublinhado se for link */
+}
+
+.btn:hover {
+  background-color: rgb(11, 84, 11);
+  /* Verde mais escuro no hover */
+  transform: scale(1.05);
+  /* Leve aumento de tamanho */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* Sombra leve */
+}
+
+/* SEÇÃO DE DESTAQUE COM TEXTO CENTRALIZADO */
+.hero-section {
+  height: calc(100vh - 80px);
+  /* Ocupa toda a altura da tela menos o menu */
+  display: flex;
+  /* Ativa flexbox */
+  align-items: center;
+  /* Centraliza verticalmente */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto */
+  position: relative;
+  /* Para que z-index funcione */
+  z-index: 1;
+  /* Fica acima da sobreposição escura */
+}
+
+.hero-container {
+  position: relative;
+  /* Para estar acima da camada ::before */
+  z-index: 2;
+  /* Garante sobreposição correta */
+  padding: 20px;
+  /* Espaço interno */
+  max-width: 800px;
+  /* Largura máxima do conteúdo */
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  /* Tamanho grande para título */
+  margin-bottom: 1rem;
+  /* Espaço abaixo do título */
+}
+
+.hero-container p {
+  margin-bottom: 2rem;
+  /* Espaço abaixo do parágrafo */
+  font-size: 1.25rem;
+  /* Tamanho de fonte maior */
+}
+
+/* BOTÕES NA SEÇÃO HERO */
+.button {
+  display: flex;
+  /* Botões em linha */
+  justify-content: center;
+  /* Centraliza os botões */
+  gap: 1rem;
+  /* Espaço entre os botões */
+  flex-wrap: wrap;
+  /* Quebra linha em telas pequenas */
+}
+
+a.descubra,
+a.inscreva {
+  padding: 10px 15px;
+  /* Espaçamento interno */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  text-decoration: none;
+  /* Remove sublinhado */
+  transition: all 0.3s ease;
+  /* Transição suave */
+  font-weight: 500;
+  /* Peso da fonte médio */
+}
+
+a.descubra {
+  background-color: green;
+  /* Fundo verde */
+  color: white;
+  /* Texto branco */
+}
+
+a.descubra:hover {
+  background-color: rgb(1, 67, 1);
+  /* Verde mais escuro no hover */
+  transform: scale(1.15);
+  /* Aumenta tamanho */
+}
+
+a.inscreva {
+  background-color: transparent;
+  /* Fundo transparente */
+  color: white;
+  /* Texto branco */
+  border: 1px solid white;
+  /* Borda branca */
+}
+
+a.inscreva:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Fundo branco semi-transparente */
+  transform: scale(1.05);
+  /* Leve aumento */
+}
+
+/* BOTÕES EM OUTRAS SEÇÕES */
+.buttons {
+  display: flex;
+  /* Linha */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  gap: 1rem;
+  /* Espaço entre os botões */
+  flex-wrap: wrap;
+  /* Permite quebra de linha */
+}
+
+a.btn-cmc,
+a.btn-sb {
+  padding: 10px 15px;
+  /* Espaçamento interno */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  text-decoration: none;
+  /* Remove sublinhado */
+  transition: all 0.3s ease;
+  /* Suaviza efeitos */
+  font-weight: 500;
+  /* Peso médio da fonte */
+}
+
+a.btn-sb {
+  background-color: green;
+  /* Fundo verde */
+  color: white;
+  /* Texto branco */
+}
+
+a.btn-sb:hover {
+  background-color: rgb(1, 67, 1);
+  /* Verde escuro no hover */
+  transform: scale(1.1);
+  /* Aumenta levemente */
+}
+
+a.btn-cmc {
+  background-color: transparent;
+  /* Fundo transparente */
+  color: white;
+  /* Texto branco */
+  border: 1px solid white;
+  /* Borda branca */
+}
+
+a.btn-cmc:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Fundo branco com transparência */
+  transform: scale(1.05);
+  /* Leve aumento */
+}
+
+/* ESTILOS DO RODAPÉ */
+.rodape {
+  background-color: #444;
+  /* Fundo cinza escuro */
+  color: white;
+  /* Texto branco */
+  padding: 20px;
+  /* Espaço interno */
+  font-family: sans-serif;
+  /* Fonte alternativa */
+}
+
+.rodape-conteudo {
+  max-width: 1000px;
+  /* Largura máxima */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+}
+
+.rodape-info h3 {
+  margin: 0;
+  /* Remove margem */
+  font-size: 1.2em;
+  /* Tamanho do subtítulo */
+}
+
+.rodape-info p {
+  margin: 5px 0 20px;
+  /* Espaços verticais entre parágrafos */
+  font-size: 0.95em;
+  /* Tamanho da fonte */
+  color: #ccc;
+  /* Cor cinza clara */
+}
+
+.links {
+  display: flex;
+  /* Links em linha */
+  flex-wrap: wrap;
+  /* Permite quebra de linha */
+  gap: 20px;
+  /* Espaço entre os links */
+  margin-bottom: 20px;
+  /* Espaço abaixo */
+}
+
+.links a {
+  color: white;
+  /* Cor dos links */
+  font-weight: bold;
+  /* Texto em negrito */
+  text-decoration: none;
+  /* Sem sublinhado */
+  font-size: 0.95em;
+  /* Tamanho da fonte */
+}
+
+.links a:hover {
+  text-decoration: underline;
+  /* Sublinhado ao passar o mouse */
+}
+
+.direitos {
+  margin-top: 20px;
+  /* Espaço acima */
+  text-align: center;
+  /* Centraliza o texto */
+  font-size: 0.9em;
+  /* Fonte um pouco menor */
+  color: #ccc;
+  /* Cinza claro */
+}
